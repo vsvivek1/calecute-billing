@@ -1,0 +1,31 @@
+{
+  "name": "calecute-billing",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GST invoices and credit notes for every Calecute app, under one GSTIN and one number series.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "next dev --port 3100",
+    "build": "next build",
+    "vercel-build": "sh scripts/vercel-build.sh",
+    "start": "next start --port 3100",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"tests/**/*.test.mts\"",
+    "migrate": "node --env-file-if-exists=.env.local scripts/migrate.mjs",
+    "add-app": "node --env-file-if-exists=.env.local scripts/add-app.mjs"
+  },
+  "dependencies": {
+    "next": "16.2.9",
+    "pdf-lib": "^1.17.1",
+    "postgres": "^3.4.7",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "typescript": "^5"
+  }
+}
